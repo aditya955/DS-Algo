@@ -33,3 +33,25 @@ class StackOverflow extends Exception {
         super(message);
     }
 }
+
+// Performing push operation on full queue
+class QueueOverflow extends Exception {
+    public QueueOverflow() {
+        super("Stack Overflow: Cannow push element, queue already full");
+    }
+
+    public QueueOverflow(String message) {
+        super(message);
+    }
+}
+
+// Performing pop operation on empty stack
+class QueueUnderflow extends Exception {
+    public QueueUnderflow() {
+        super("Stack Underflow: Cannot pop from an empty queue");
+    }
+
+    public QueueUnderflow(String message) {
+        super(message);
+    }
+}
