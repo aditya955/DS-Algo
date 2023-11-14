@@ -96,6 +96,17 @@ public class Array<T> {
         this.copyArray(arr);
     }
 
+    public T get(int index) throws ArrayIndexOutOfBoundsException {
+        if(index > this.top) {
+            throw new ArrayIndexOutOfBoundsException(index);
+        }
+        return this.obj[index];
+    }
+
+    public int length() {
+        return this.SIZE;
+    }
+
     // Removes last element from the array
     public T pop() throws ArrayUnderflow {
         if (this.top == 0) {
