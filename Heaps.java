@@ -58,10 +58,6 @@ public class Heaps extends Heap {
 }
 
 abstract class Heap {
-    public void test() {
-        System.out.println(this.heap);
-    }
-    
     ArrayList<Integer> heap;
     final int maxSize;
 
@@ -221,15 +217,23 @@ class MaxHeap extends Heap {
     }
 
     public void insert(int data) throws Exception {
-
+        if (this.maxSize > 0 && this.heap.size() >= this.maxSize) {
+            throw new Exception(
+                    "Insert Error: Heap already full, cannot insert more elements, max heap size: " + this.maxSize);
+        }
+        this.heap.add(data);
+        upheap(this.heap.size() - 1);
     }
 
-    public int delete() throws Exception {
-        return 0;
-    }
-
-    public void heapify(int[] arr) {
-
+    private void upheap(int index) {
+        if (index <= 0) {
+            return;
+        }
+        int parent = this.getParent(index);
+        if (this.heap.get(index) > this.heap.get(parent)) {
+            swap(index, parent);
+            upheap(parent);
+        }
     }
 
     public int get() throws Exception {
@@ -237,5 +241,44 @@ class MaxHeap extends Heap {
             throw new IndexOutOfBoundsException();
         }
         return this.heap.get(0);
+    }
+
+    public int delete() throws Exception {
+        if (this.heap.size() == 0) {
+            throw new Exception("Underflow: Cannot delete from empty heap");
+        }
+
+        int deleted = this.heap.get(0);
+        int last = this.heap.remove(this.heap.size() - 1);
+
+        if (!this.heap.isEmpty()) {
+            this.heap.set(0, last);
+            downheap(0);
+        }
+
+        return deleted;
+    }
+
+    private void downheap(int index) {
+        int leftChild = this.getLeftChild(index);
+        int rightChild = this.getRightChild(index);
+
+        int min = index;
+        if (leftChild < this.heap.size() && this.heap.get(min) < this.heap.get(leftChild)) {
+            min = leftChild;
+        }
+
+        if (rightChild < this.heap.size() && this.heap.get(min) < this.heap.get(rightChild)) {
+            min = rightChild;
+        }
+
+        if (min != index) {
+            swap(min, index);
+            downheap(min);
+        }
+    }
+
+    public void heapify(int[] arr) {
+
     }
 }
