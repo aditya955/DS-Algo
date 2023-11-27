@@ -1,16 +1,17 @@
+package DataStructure;
 import java.util.ArrayList;
 
 public class Queues<T> {
     ArrayList<T> queue;
     int maxSize = -1;
 
-    Queues() {
+    public Queues() {
         queue = new ArrayList<>();
     }
-    Queues(int initialSize) {
+    public Queues(int initialSize) {
         queue = new ArrayList<>(initialSize);
     }
-    Queues(int initialSize, int maxSize) throws Exception {
+    public Queues(int initialSize, int maxSize) throws Exception {
         this(initialSize);
         if(maxSize == 0) {
             throw new Exception("Max size cannot be 0");

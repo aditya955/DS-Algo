@@ -1,3 +1,4 @@
+package DataStructure;
 /**
  * Implementation of custom dynamic array
  * Increases size as necessary

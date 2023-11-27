@@ -1,3 +1,4 @@
+package DataStructure;
 /*
  * Properties:
  *  1. Represented as complete binary tree i.e., Every level is full except for leaf and leaf starts from left to right (insertions)

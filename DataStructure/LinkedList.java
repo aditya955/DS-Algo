@@ -1,3 +1,4 @@
+package DataStructure;
 public class LinkedList<T> {
     class Node<U> {
         U data;
@@ -18,10 +19,10 @@ public class LinkedList<T> {
     private Node<T> tail;
     private int size = 0;
 
-    LinkedList() {
+    public LinkedList() {
     }
 
-    LinkedList(T data) {
+    public LinkedList(T data) {
         this.head = new Node<T>(data);
     }
 

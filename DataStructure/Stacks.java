@@ -1,3 +1,4 @@
+package DataStructure;
 /*
  * STACK
  * Follows LIFO - Last In First Out
@@ -18,17 +19,17 @@ public class Stacks<T> {
     ArrayList<T> stack;
     int maxSize;
 
-    Stacks() {
+    public Stacks() {
         this.stack = new ArrayList<>();
         this.maxSize = -1;
     }
 
-    Stacks(int initialSize) {
+    public Stacks(int initialSize) {
         this.stack = new ArrayList<>(initialSize);
         this.maxSize = -1;
     }
 
-    Stacks(int initialSize, int maxSize) throws Exception {
+    public Stacks(int initialSize, int maxSize) throws Exception {
         this(initialSize);
         if(maxSize == 0) {
             throw new Exception("Max size cannot be 0");

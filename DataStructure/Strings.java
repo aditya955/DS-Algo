@@ -1,3 +1,4 @@
+package DataStructure;
 public class Strings {
     private char[] str;
     private int SIZE = 10;

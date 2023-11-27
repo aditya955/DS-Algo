@@ -1,2 +1,2 @@
-# Data Structures
-Custom Implementation of various Data Structures
+# Data Structures & Algorithms
+Data Structures and Algorithms implemetation
