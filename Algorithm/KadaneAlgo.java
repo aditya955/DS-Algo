@@ -13,6 +13,7 @@ package Algorithm;
  */
 
 public class KadaneAlgo {
+    // Finds max subarray sum
     public static int maxSum(int[] arr) {
         int sum = 0;
         int max = Integer.MIN_VALUE;
@@ -30,6 +31,7 @@ public class KadaneAlgo {
         return max;
     }
 
+    // Finds range of max sum in subarray
     public static int[] maxRange(int[] arr) {
         int sum = 0;
         int max = Integer.MIN_VALUE;
